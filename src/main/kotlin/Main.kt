@@ -1,60 +1,29 @@
-fun main(args: Array<String>) {
+fun main() {
     println("Hello World!")
 
-
-    val lucio = Funcionario(
-        nome = "Lucio",
-        cpf = "111.111.111-11",
-        salario = 1000.0,
+    val contaCorrente = ContaCorrente(
+        titular = "Lucio",
+        conta = 1000,
     )
 
-    println("nome ${lucio.nome}")
-    println("cpf ${lucio.cpf}")
-    println("salário ${lucio.salario}")
-    println("bonificação ${lucio.bonificacao}")
-
-    println("--------------------------------")
-    println()
-
-    val fernanda = Gerente(
-        nome = "Fernanda",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 2222,
+    val contaPoupanca = ContaPoupanca(
+        titular = "Fernanda",
+        conta = 1001,
     )
 
-    println("nome ${fernanda.nome}")
-    println("cpf ${fernanda.cpf}")
-    println("salário ${fernanda.salario}")
-    println("bonificação ${fernanda.bonificacao}")
-    if (fernanda.autenticar(valor = 2222)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("Falha na autenticação")
-    }
+    contaCorrente.depositar(valor = 1000.0)
+    contaPoupanca.depositar(valor = 1000.0)
 
-    println("--------------------------------")
-    println()
+    contaCorrente.sacar(valor = 100.0)
+    contaPoupanca.sacar(valor = 100.0)
 
-    val noah = Diretor(
-        nome = "Noah",
-        cpf = "333.333.333-33",
-        salario = 3000.0,
-        senha = 3333,
-        plr = 500.0,
-    )
+    println("Saldo conta corrente após saque: ${contaCorrente.saldo}")
+    println("Saldo conta poupança após saque: ${contaPoupanca.saldo}")
 
-    println("nome ${noah.nome}")
-    println("cpf ${noah.cpf}")
-    println("salário ${noah.salario}")
-    println("bonificação ${noah.bonificacao}")
-    if (noah.autenticar(valor = 2222)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("Falha na autenticação")
-    }
+    contaCorrente.tranferir(valor = 100.0, destino = contaPoupanca)
 
+    println("Saldo conta corrente após transferir: ${contaCorrente.saldo}")
+    println("Saldo conta poupança após receber transferência: ${contaPoupanca.saldo}")
 }
-
 
 

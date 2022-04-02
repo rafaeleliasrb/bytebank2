@@ -1,4 +1,4 @@
-fun testeCopiaEReferencia() {
+fun testaCopiaEReferencia() {
     val contaJoao = Conta("Joao", 1000)
 
     val contaMaria = contaJoao

@@ -1,4 +1,4 @@
-fun testeCondicional(saldo: Double) {
+fun testaCondicional(saldo: Double) {
     if (saldo > 10) {
         println("Saldo positivo")
     } else if (saldo == 0.0) {

@@ -1,4 +1,4 @@
-fun testeLacos() {
+fun testaLacos() {
     for (i in 5 downTo 1 step 2) {
         val titular = "José $i"
         val conta = 1000 + 1
