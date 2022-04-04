@@ -1,6 +1,6 @@
 abstract class Conta(
     var titular: String,
-    val conta: Int
+    val conta: Int,
 ) {
     var saldo = 0.0
         protected set
@@ -12,13 +12,4 @@ abstract class Conta(
     }
 
     abstract fun sacar(valor: Double)
-
-    fun tranferir(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.depositar(valor)
-            return true
-        }
-        return false
-    }
 }

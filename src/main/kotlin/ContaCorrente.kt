@@ -1,7 +1,7 @@
 class ContaCorrente(
     titular: String,
     conta: Int,
-) : Conta(
+) : ContaAvancada(
     titular = titular,
     conta = conta,
 ) {
