@@ -1,8 +1,8 @@
 fun testaOperacoes() {
-    val contaLucio = Conta(titular = "Lucio", conta = 1000)
+    val contaLucio = ContaPoupanca(titular = "Lucio", conta = 1000)
     contaLucio.depositar(10.0)
 
-    val contaFernanda = Conta(conta = 1001, titular = "Fernanda")
+    val contaFernanda = ContaCorrente(conta = 1001, titular = "Fernanda")
     contaFernanda.depositar(20.0)
 
     println("Saldo ${contaLucio.titular}: ${contaLucio.saldo}")

@@ -1,5 +1,5 @@
 fun testaCopiaEReferencia() {
-    val contaJoao = Conta("Joao", 1000)
+    val contaJoao = ContaCorrente("Joao", 1000)
 
     val contaMaria = contaJoao
     contaMaria.titular = "Maria"
