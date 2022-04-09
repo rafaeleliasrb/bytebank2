@@ -1,5 +1,7 @@
+package br.com.rafael.bytebank.modelo
+
 class ContaCorrente(
-    titular: String,
+    titular: Cliente,
     conta: Int,
 ) : ContaAvancada(
     titular = titular,

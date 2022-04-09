@@ -1,16 +1,23 @@
+package br.com.rafael.bytebank.teste
+
+import br.com.rafael.bytebank.modelo.Cliente
+import br.com.rafael.bytebank.modelo.ContaCorrente
+import br.com.rafael.bytebank.modelo.ContaPoupanca
+import br.com.rafael.bytebank.modelo.ContaSalario
+
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
-        titular = "Lucio",
+        titular = Cliente(nome = "Lucio", cpf = "", senha = 1,),
         conta = 1000,
     )
 
     val contaPoupanca = ContaPoupanca(
-        titular = "Fernanda",
+        titular = Cliente(nome = "Fernanda", cpf = "", senha = 1),
         conta = 1001,
     )
 
     val contaSalario = ContaSalario(
-        titular = "Joao",
+        titular = Cliente(nome = "Joao", cpf = "", senha = 1),
         conta = 1002,
     )
 

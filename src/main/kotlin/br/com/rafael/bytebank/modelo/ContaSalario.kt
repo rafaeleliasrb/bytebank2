@@ -1,5 +1,7 @@
+package br.com.rafael.bytebank.modelo
+
 class ContaSalario(
-    titular: String,
+    titular: Cliente,
     conta: Int,
 ) : Conta(
     titular = titular,

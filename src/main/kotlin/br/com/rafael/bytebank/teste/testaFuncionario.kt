@@ -1,3 +1,10 @@
+package br.com.rafael.bytebank.teste
+
+import br.com.rafael.bytebank.modelo.Analista
+import br.com.rafael.bytebank.modelo.CalculadoraBonificacao
+import br.com.rafael.bytebank.modelo.Diretor
+import br.com.rafael.bytebank.modelo.Gerente
+
 fun testaFuncionario() {
     val lucio = Analista(
         nome = "Lucio",

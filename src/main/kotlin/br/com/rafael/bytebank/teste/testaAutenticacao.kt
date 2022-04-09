@@ -1,3 +1,10 @@
+package br.com.rafael.bytebank.teste
+
+import br.com.rafael.bytebank.modelo.Cliente
+import br.com.rafael.bytebank.modelo.Diretor
+import br.com.rafael.bytebank.modelo.Gerente
+import br.com.rafael.bytebank.modelo.SistemaInterno
+
 fun testaAutenticacao() {
     val diretor = Diretor(
         nome = "Lucio",

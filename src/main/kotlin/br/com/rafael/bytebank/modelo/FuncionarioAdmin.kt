@@ -1,3 +1,5 @@
+package br.com.rafael.bytebank.modelo
+
 abstract class FuncionarioAdmin(
     nome: String,
     cpf: String,

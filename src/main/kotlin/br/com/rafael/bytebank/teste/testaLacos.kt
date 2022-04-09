@@ -1,3 +1,5 @@
+package br.com.rafael.bytebank.teste
+
 fun testaLacos() {
     for (i in 5 downTo 1 step 2) {
         val titular = "José $i"

@@ -1,3 +1,5 @@
+package br.com.rafael.bytebank.teste
+
 fun testaCondicional(saldo: Double) {
     if (saldo > 10) {
         println("Saldo positivo")
