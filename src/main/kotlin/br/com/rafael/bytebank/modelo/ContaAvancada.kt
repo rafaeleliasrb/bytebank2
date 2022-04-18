@@ -1,5 +1,8 @@
 package br.com.rafael.bytebank.modelo
 
+import br.com.rafael.bytebank.exception.FalhaAutenticacaoException
+import br.com.rafael.bytebank.exception.SaldoInsuficienteException
+
 abstract class ContaAvancada(
     titular: Cliente,
     conta: Int,
@@ -7,12 +10,16 @@ abstract class ContaAvancada(
     titular = titular,
     conta = conta,
 ) {
-    fun tranferir(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.depositar(valor)
-            return true
+    fun tranferir(valor: Double, destino: Conta, senha: Int) {
+        if (saldo < valor) {
+            throw SaldoInsuficienteException(
+                mensagem = "Saldo insuficiente, saldo em conta: $saldo, e valor a transferir: $valor")
         }
-        return false
+
+        if (!autenticar(senha)) {
+            throw FalhaAutenticacaoException()
+        }
+        saldo -= valor
+        destino.depositar(valor)
     }
 }

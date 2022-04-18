@@ -6,7 +6,7 @@ var global: Int = 0
 abstract class Conta(
     var titular: Cliente,
     val conta: Int,
-) {
+): Autenticavel {
     var saldo = 0.0
         protected set
 
@@ -16,6 +16,10 @@ abstract class Conta(
 
     init {
         totalConta++
+    }
+
+    override fun autenticar(valor: Int): Boolean {
+        return titular.autenticar(valor)
     }
 
     fun depositar(valor: Double) {

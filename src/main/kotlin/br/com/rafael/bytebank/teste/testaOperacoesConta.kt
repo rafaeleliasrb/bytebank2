@@ -1,11 +1,13 @@
 package br.com.rafael.bytebank.teste
 
+import br.com.rafael.bytebank.exception.FalhaAutenticacaoException
+import br.com.rafael.bytebank.exception.SaldoInsuficienteException
 import br.com.rafael.bytebank.modelo.Cliente
 import br.com.rafael.bytebank.modelo.ContaCorrente
 import br.com.rafael.bytebank.modelo.ContaPoupanca
 import br.com.rafael.bytebank.modelo.Endereco
 
-fun testaOperacoes() {
+fun testaOperacoesConta() {
     val contaLucio = ContaPoupanca(
         titular = Cliente(
             nome = "Lucio",
@@ -30,10 +32,20 @@ fun testaOperacoes() {
     println("Saldo ${contaLucio.titular.nome} apos saque de $saque: ${contaLucio.saldo}")
 
     val tranferencia = 10.0
-    if (contaLucio.tranferir(tranferencia, contaFernanda)) {
+    try {
+        contaLucio.tranferir(valor = tranferencia, destino = contaFernanda, senha = 1)
         println("Valor transferido com sucesso")
-    } else {
+    } catch (e: SaldoInsuficienteException) {
         println("Falha na transaferência")
+        println("Saldo insuficiente")
+        e.printStackTrace()
+    } catch (e: FalhaAutenticacaoException) {
+        println("Falha na transaferência")
+        println("Falha na autenticacao")
+        e.printStackTrace()
+    } catch (e: Exception) {
+        println("Erro desconhecido")
+        e.printStackTrace()
     }
 
     println("Saldo final ${contaLucio.titular.nome}: ${contaLucio.saldo}")

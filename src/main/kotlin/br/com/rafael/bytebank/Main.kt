@@ -1,25 +1,30 @@
 package br.com.rafael.bytebank
 
-import br.com.rafael.bytebank.modelo.Autenticavel
-import br.com.rafael.bytebank.modelo.Cliente
-import br.com.rafael.bytebank.modelo.Conta.Companion.totalConta
-import br.com.rafael.bytebank.modelo.ContaCorrente
 import br.com.rafael.bytebank.modelo.Endereco
-import br.com.rafael.bytebank.teste.testaObject
 
 fun main() {
 //    testaContasDiferentes()
 //    testaOperacoes()
 //    testaObject()
+//    testaExpressao()
+//    testaOperacoesConta()
+    val enderecoNulo: Endereco? = null
+    val logradouro = enderecoNulo?.logradouro
+    val length = enderecoNulo?.logradouro?.length
+    println(logradouro)
+    println(length)
 
-    val endereco = Endereco(logradouro = "Rua da Assunção", cidade = "Fortaleza", cep = "60050-011")
-    val enderecoNovo = Endereco(logradouro = "Rua da Assunção", cidade = "Fortaleza", cep = "60050-011")
+    enderecoNulo?.let {
+        println(it.logradouro.length)
+    }
 
-    println(endereco.equals(enderecoNovo))
-    println(endereco.hashCode())
-    println(enderecoNovo.hashCode())
+    testeCast("")
+
+    val enderecoNuloNovo: Endereco? = null
+    val teste: Endereco = enderecoNuloNovo ?: throw IllegalStateException("Endereco nulo")
 }
 
-fun testaAny(teste: Any) {
-    println(teste)
+fun testeCast(valor: Any) {
+    val numero: Int? = valor as? Int
+    println(numero)
 }
