@@ -1,5 +1,9 @@
 package br.com.rafael.bytebank
 
+import br.com.rafael.bytebank.collections.testaAssociacaoMap
+import br.com.rafael.bytebank.collections.testaCollection
+import br.com.rafael.bytebank.collections.testaMap
+import br.com.rafael.bytebank.collections.testaSet
 import br.com.rafael.bytebank.list.testaPrateleira
 
 fun main() {
@@ -14,7 +18,11 @@ fun main() {
 //    testaFuncoesCustomizadasArray()
 //    testaList()
 //    testaListComNulos()
-    testaPrateleira()
+//    testaPrateleira()
+//    testaCollection()
+//    testaSet()
+//    testaMap()
+    testaAssociacaoMap()
 }
 
 
