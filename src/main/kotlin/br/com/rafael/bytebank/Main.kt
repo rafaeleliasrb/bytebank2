@@ -4,6 +4,9 @@ import br.com.rafael.bytebank.collections.testaAssociacaoMap
 import br.com.rafael.bytebank.collections.testaCollection
 import br.com.rafael.bytebank.collections.testaMap
 import br.com.rafael.bytebank.collections.testaSet
+import br.com.rafael.bytebank.functions.testaHighOrderFunction
+import br.com.rafael.bytebank.functions.testaScopeFunction
+import br.com.rafael.bytebank.functions.testaTipoFuncao
 import br.com.rafael.bytebank.list.testaPrateleira
 
 fun main() {
@@ -22,7 +25,10 @@ fun main() {
 //    testaCollection()
 //    testaSet()
 //    testaMap()
-    testaAssociacaoMap()
+//    testaAssociacaoMap()
+//    testaTipoFuncao()
+    testaHighOrderFunction()
+//    testaScopeFunction()
 }
 
 

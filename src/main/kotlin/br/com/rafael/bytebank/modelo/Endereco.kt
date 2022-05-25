@@ -36,4 +36,16 @@ class Endereco(
         result = 31 * result + complemento.hashCode()
         return result
     }
+
+    override fun toString(): String {
+        return "Endereco(logradouro='$logradouro', numero=$numero, bairro='$bairro', cidade='$cidade', estado='$estado', cep='$cep', complemento='$complemento')"
+    }
+
+    fun completo(): String {
+        return """
+            $logradouro $numero, $bairro, $cidade - $estado
+            $complemento
+            $cep
+        """.trimIndent()
+    }
 }
